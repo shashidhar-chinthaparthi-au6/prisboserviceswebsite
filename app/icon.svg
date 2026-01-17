@@ -1,0 +1,42 @@
+<svg width="32" height="32" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#dc2626" />
+      <stop offset="100%" stopColor="#b91c1c" />
+    </linearGradient>
+    <linearGradient id="faviconInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="100%" stopColor="#f3f4f6" />
+    </linearGradient>
+    <filter id="faviconGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <circle cx="60" cy="60" r="56" fill="url(#faviconGradient)" />
+  
+  <g filter="url(#faviconGlow)">
+    <circle cx="60" cy="60" r="12" fill="url(#faviconInner)" opacity="0.9" />
+    
+    <circle cx="60" cy="30" r="8" fill="url(#faviconInner)" />
+    <line x1="60" y1="42" x2="60" y2="38" stroke="url(#faviconInner)" strokeWidth="4" strokeLinecap="round" />
+    
+    <circle cx="60" cy="90" r="8" fill="url(#faviconInner)" />
+    <line x1="60" y1="78" x2="60" y2="82" stroke="url(#faviconInner)" strokeWidth="4" strokeLinecap="round" />
+    
+    <circle cx="30" cy="60" r="8" fill="url(#faviconInner)" />
+    <line x1="38" y1="60" x2="42" y2="60" stroke="url(#faviconInner)" strokeWidth="4" strokeLinecap="round" />
+    
+    <circle cx="90" cy="60" r="8" fill="url(#faviconInner)" />
+    <line x1="82" y1="60" x2="78" y2="60" stroke="url(#faviconInner)" strokeWidth="4" strokeLinecap="round" />
+    
+    <circle cx="85" cy="35" r="6" fill="url(#faviconInner)" opacity="0.8" />
+    <circle cx="35" cy="35" r="6" fill="url(#faviconInner)" opacity="0.8" />
+    <circle cx="85" cy="85" r="6" fill="url(#faviconInner)" opacity="0.8" />
+    <circle cx="35" cy="85" r="6" fill="url(#faviconInner)" opacity="0.8" />
+  </g>
+</svg>

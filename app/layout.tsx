@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   description: 'Professional software development services including website development, mobile app development, and custom software solutions.',
   keywords: 'software development, web development, mobile app development, custom software',
   authors: [{ name: 'Prisbo' }],
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
+  },
   openGraph: {
     title: 'Prisbo - Software Services & Products',
     description: 'Professional software development services',
@@ -25,6 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BXRZR82DG"></script>
         <script
@@ -46,6 +52,7 @@ export default function RootLayout({
               name: 'Prisbo',
               description: 'Software Services & Products Company',
               url: process.env.NEXT_PUBLIC_SITE_URL || 'https://prisbo.com',
+              logo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://prisbo.com'}/icon.svg`,
             }),
           }}
         />
