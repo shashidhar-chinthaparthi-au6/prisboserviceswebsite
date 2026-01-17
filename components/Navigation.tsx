@@ -17,6 +17,7 @@ export default function Navigation() {
     { href: '/about', label: 'About' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
+    { href: '/feedback', label: 'Feedback' },
   ];
 
   const isActive = (href: string) => {
