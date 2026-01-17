@@ -15,7 +15,7 @@ export default function ServicesPricingSection() {
           Transparent Pricing
         </h2>
         <p className="text-xl text-neutral-gray">
-          Affordable plans starting from just {currency === 'USD' ? '$299' : '₹24,900'}/month. All plans include support.
+          Affordable plans starting from just {currency === 'USD' ? '$299' : '₹24,900'}. All plans include support.
         </p>
       </div>
 
@@ -26,7 +26,6 @@ export default function ServicesPricingSection() {
           name="Basic"
           price="299"
           priceInr="24,900"
-          period="/month"
           description="Perfect for small projects"
           features={[
             { text: 'Basic Development', included: true },
@@ -45,7 +44,6 @@ export default function ServicesPricingSection() {
           name="Standard"
           price="599"
           priceInr="49,800"
-          period="/month"
           description="Most popular choice"
           features={[
             { text: 'Full Development', included: true },
@@ -65,7 +63,6 @@ export default function ServicesPricingSection() {
           name="Premium"
           price="999"
           priceInr="83,000"
-          period="/month"
           description="For enterprise needs"
           features={[
             { text: 'Custom Development', included: true },

@@ -27,7 +27,6 @@ export default function PricingSection() {
             name="Starter"
             price="299"
             priceInr="24,900"
-            period="/month"
             description="Perfect for small businesses getting started"
             features={[
               { text: 'Basic Website/App Development', included: true },
@@ -48,7 +47,6 @@ export default function PricingSection() {
             name="Professional"
             price="599"
             priceInr="49,800"
-            period="/month"
             description="Ideal for growing businesses"
             features={[
               { text: 'Full Website/App Development', included: true },
@@ -70,7 +68,6 @@ export default function PricingSection() {
             name="Enterprise"
             price="999"
             priceInr="83,000"
-            period="/month"
             description="For large businesses with custom needs"
             features={[
               { text: 'Custom Software Solutions', included: true },

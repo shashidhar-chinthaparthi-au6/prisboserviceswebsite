@@ -23,10 +23,9 @@ export default function PricingBreakdownCard({ plan, exchangeRate }: PricingBrea
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
       <div className="bg-gradient-to-r from-primary to-red-700 text-white p-6">
         <h3 className="text-2xl font-bold mb-2">{plan.planName}</h3>
-        <div className="flex items-baseline gap-2">
-          <span className="text-4xl font-bold">{displayPrice(plan.finalPrice)}</span>
-          <span className="text-lg opacity-90">/month</span>
-        </div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-4xl font-bold">{displayPrice(plan.finalPrice)}</span>
+          </div>
       </div>
 
       <div className="p-6">

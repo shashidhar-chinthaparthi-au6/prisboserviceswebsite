@@ -3,38 +3,31 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Blog - Prisbo | Software Development Insights',
-  description: 'Read our latest articles about software development, technology trends, and business insights.',
+  description: 'Read our latest articles about software development, technology trends, website development costs, and business insights.',
 };
 
 export default function BlogPage() {
   const blogPosts = [
     {
-      id: 1,
-      title: 'The Future of Web Development in 2024',
-      excerpt: 'Exploring the latest trends and technologies shaping the future of web development.',
-      date: '2024-01-15',
+      id: 'website-development-cost-india',
+      title: 'Website Development Cost in India: Complete Guide 2024',
+      excerpt: 'Understanding website development costs in India. Learn about pricing factors, what to expect, and how to get the best value for your investment.',
+      date: '2024-01-20',
       category: 'Web Development',
     },
     {
-      id: 2,
-      title: 'Mobile App Development: Native vs Cross-Platform',
-      excerpt: 'A comprehensive guide to choosing between native and cross-platform mobile app development.',
-      date: '2024-01-10',
-      category: 'Mobile Development',
-    },
-    {
-      id: 3,
-      title: 'How Custom Software Can Transform Your Business',
-      excerpt: 'Discover how custom software solutions can give your business a competitive edge.',
-      date: '2024-01-05',
+      id: 'choose-software-development-company',
+      title: 'How to Choose a Software Development Company: 10 Essential Tips',
+      excerpt: 'A comprehensive guide to selecting the right software development partner. Learn what to look for, questions to ask, and red flags to avoid.',
+      date: '2024-01-15',
       category: 'Business',
     },
     {
-      id: 4,
-      title: 'Best Practices for Software Project Management',
-      excerpt: 'Learn the essential practices for managing software development projects successfully.',
-      date: '2023-12-28',
-      category: 'Project Management',
+      id: 'nextjs-vs-react-business-websites',
+      title: 'Next.js vs React for Business Websites: Which Should You Choose?',
+      excerpt: 'Comparing Next.js and React for business websites. Understand the differences, use cases, and which framework is right for your project.',
+      date: '2024-01-10',
+      category: 'Web Development',
     },
   ];
 
@@ -44,7 +37,9 @@ export default function BlogPage() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl font-bold text-primary mb-6">Blog</h1>
           <p className="text-xl text-neutral-gray mb-12">
-            Insights, tips, and updates from the world of software development.
+            Insights, tips, and updates from the world of software development. Learn about 
+            <Link href="/services" className="text-primary hover:underline mx-1">our services</Link>
+            and industry best practices.
           </p>
 
           <div className="space-y-8">

@@ -23,7 +23,7 @@ export default function PricingCard({
   name,
   price,
   priceInr,
-  period = '/month',
+  period,
   description,
   features,
   ctaText,
