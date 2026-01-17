@@ -32,8 +32,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Carousel Section */}
-      <section className="relative mt-8 mb-12">
-        <div className="container-custom">
+      <section className="relative mt-8 mb-12 w-full">
+        <div className="w-full">
           <ImageCarousel slides={heroSlides} height="h-[400px] md:h-[450px]" />
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">

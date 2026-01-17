@@ -47,7 +47,7 @@ export default function ImageCarousel({
   };
 
   return (
-    <div className={`relative w-full ${height} overflow-hidden rounded-lg`}>
+    <div className={`relative w-full ${height} overflow-hidden`}>
       {slides.map((slide, index) => (
         <div
           key={index}
