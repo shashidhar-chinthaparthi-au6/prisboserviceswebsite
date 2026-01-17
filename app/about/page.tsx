@@ -69,7 +69,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-primary mb-4">Our Values</h2>
             <ul className="list-disc pl-6 space-y-2 text-neutral-gray mb-8">
               <li><strong>Quality First:</strong> We never compromise on quality and always deliver excellence.</li>
-              <li><strong>Client Focus:</strong> Your success is our success. We're committed to your goals.</li>
+              <li><strong>Client Focus:</strong> Your success is our success. We&apos;re committed to your goals.</li>
               <li><strong>Innovation:</strong> We stay ahead of the curve with the latest technologies and best practices.</li>
               <li><strong>Transparency:</strong> Clear communication and honest feedback throughout every project.</li>
               <li><strong>Reliability:</strong> You can count on us to deliver on time and within budget.</li>
@@ -77,12 +77,12 @@ export default function AboutPage() {
 
             <h2 className="text-3xl font-bold text-primary mb-4">Why Choose Prisbo?</h2>
             <p className="text-neutral-gray mb-6">
-              With years of experience in software development, we've helped countless businesses
+              With years of experience in software development, we&apos;ve helped countless businesses
               achieve their digital transformation goals. Our team of skilled developers, designers,
               and project managers work together to deliver solutions that make a real impact.
             </p>
             <p className="text-neutral-gray">
-              Whether you're a startup looking to build your first product or an enterprise
+              Whether you&apos;re a startup looking to build your first product or an enterprise
               seeking to modernize your systems, Prisbo has the expertise and dedication to
               bring your vision to life.
             </p>

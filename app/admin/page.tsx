@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { Lead } from '@/types/lead';
 
@@ -25,11 +25,32 @@ export default function AdminDashboard() {
     checkAuth();
   }, []);
 
+  const fetchLeads = useCallback(async () => {
+    try {
+      const params = new URLSearchParams({
+        page: pagination.page.toString(),
+        limit: pagination.limit.toString(),
+      });
+      if (search) params.append('search', search);
+      if (filter) params.append('filter', filter);
+
+      const response = await fetch(`/api/admin/leads?${params}`);
+      const data = await response.json();
+
+      if (response.ok) {
+        setLeads(data.leads);
+        setPagination(data.pagination);
+      }
+    } catch (error) {
+      console.error('Error fetching leads:', error);
+    }
+  }, [pagination.page, search, filter]);
+
   useEffect(() => {
     if (isAuthenticated) {
       fetchLeads();
     }
-  }, [isAuthenticated, pagination.page, search, filter]);
+  }, [isAuthenticated, fetchLeads]);
 
   const checkAuth = async () => {
     try {
@@ -79,27 +100,6 @@ export default function AdminDashboard() {
       router.push('/admin');
     } catch (error) {
       console.error('Logout error:', error);
-    }
-  };
-
-  const fetchLeads = async () => {
-    try {
-      const params = new URLSearchParams({
-        page: pagination.page.toString(),
-        limit: pagination.limit.toString(),
-      });
-      if (search) params.append('search', search);
-      if (filter) params.append('filter', filter);
-
-      const response = await fetch(`/api/admin/leads?${params}`);
-      const data = await response.json();
-
-      if (response.ok) {
-        setLeads(data.leads);
-        setPagination(data.pagination);
-      }
-    } catch (error) {
-      console.error('Error fetching leads:', error);
     }
   };
 

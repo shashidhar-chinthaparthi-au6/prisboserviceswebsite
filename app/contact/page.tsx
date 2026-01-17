@@ -31,7 +31,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-xl text-neutral-gray">
-              Have a question or ready to start your project? We'd love to hear from you.
+              Have a question or ready to start your project? We&apos;d love to hear from you.
             </p>
           </div>
 

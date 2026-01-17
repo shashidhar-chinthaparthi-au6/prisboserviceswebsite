@@ -194,7 +194,7 @@ export default function HomePage() {
                 Ready to Get Started?
               </h2>
               <p className="text-xl text-neutral-gray">
-                Let's discuss how we can help transform your business.
+                Let&apos;s discuss how we can help transform your business.
               </p>
             </div>
             <LeadForm
