@@ -13,20 +13,24 @@ export default function ProductsPage() {
     {
       id: 'product-1',
       name: 'Business Management Suite',
-      description: 'Comprehensive business management solution with CRM, project management, and analytics.',
+      description: 'Complete business management suite to manage customers, projects, teams, and analytics all in one integrated platform. Built for scale, designed for efficiency.',
       features: ['CRM Integration', 'Project Tracking', 'Analytics Dashboard', 'Team Collaboration'],
+      isLive: true,
+      liveUrl: 'https://bms.prisboservices.com/',
     },
     {
       id: 'product-2',
       name: 'E-Commerce Platform',
       description: 'Full-featured e-commerce platform with inventory management, payment processing, and order tracking.',
       features: ['Inventory Management', 'Payment Gateway', 'Order Tracking', 'Customer Portal'],
+      isLive: false,
     },
     {
       id: 'product-3',
       name: 'Analytics Dashboard',
       description: 'Real-time analytics and reporting dashboard for data-driven business decisions.',
       features: ['Real-time Data', 'Custom Reports', 'Data Visualization', 'Export Options'],
+      isLive: false,
     },
   ];
 
@@ -78,12 +82,41 @@ export default function ProductsPage() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href={`/products/${product.id}`}
-                className="inline-block bg-secondary hover:bg-secondary-dark text-white font-semibold py-2 px-6 rounded-lg transition-colors"
-              >
-                Learn More
-              </Link>
+              <div className="flex gap-3">
+                {product.isLive && product.liveUrl ? (
+                  <>
+                    <a
+                      href={product.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-primary hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+                    >
+                      Try Now
+                    </a>
+                    <Link
+                      href={`/products/${product.id}`}
+                      className="inline-block bg-secondary hover:bg-secondary-dark text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+                    >
+                      Learn More
+                    </Link>
+                  </>
+                ) : (
+                  <Link
+                    href={`/products/${product.id}`}
+                    className="inline-block bg-secondary hover:bg-secondary-dark text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+                  >
+                    Learn More
+                  </Link>
+                )}
+              </div>
+              {product.isLive && (
+                <div className="mt-3">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                    Live & Available
+                  </span>
+                </div>
+              )}
               </div>
             </div>
           ))}
