@@ -182,6 +182,85 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Portfolio Section - Completed Projects */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-primary mb-4">
+              Our Completed Projects
+            </h2>
+            <p className="text-xl text-neutral-gray">
+              Real websites and applications we&apos;ve built for our clients
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Business Management Suite */}
+            <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-primary transition-all shadow-lg hover:shadow-xl">
+              <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <h3 className="text-2xl font-bold text-primary mb-2">Business Management Suite</h3>
+                    <p className="text-neutral-gray text-sm">Complete business management platform</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  <span className="text-sm font-semibold text-green-700">Live & Active</span>
+                </div>
+                <p className="text-neutral-gray mb-4">
+                  Comprehensive business management solution with CRM, project tracking, analytics dashboard, and team collaboration features.
+                </p>
+                <a
+                  href="https://bms.prisboservices.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+                >
+                  Visit Website
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Kishore Infracons */}
+            <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-primary transition-all shadow-lg hover:shadow-xl">
+              <div className="relative h-48 bg-gradient-to-br from-secondary/20 to-primary/20">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <h3 className="text-2xl font-bold text-primary mb-2">Kishore Infracons</h3>
+                    <p className="text-neutral-gray text-sm">Infrastructure & Construction Company</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  <span className="text-sm font-semibold text-green-700">Live & Active</span>
+                </div>
+                <p className="text-neutral-gray mb-4">
+                  Professional website for infrastructure and construction company, showcasing services, projects, and company information.
+                </p>
+                <a
+                  href="https://www.kishoreinfracons.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+                >
+                  Visit Website
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <PricingSection />
 

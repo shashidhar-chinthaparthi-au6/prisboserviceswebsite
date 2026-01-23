@@ -175,6 +175,35 @@ export default function WebsiteDevelopmentPage() {
               </ul>
             </div>
 
+            <h2 className="text-3xl font-bold text-primary mb-4">Our Completed Projects</h2>
+            <p className="text-neutral-gray mb-6">
+              Here are some of the websites we&apos;ve successfully delivered to our clients:
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-primary transition-all">
+                <h3 className="text-xl font-bold text-primary mb-3">Kishore Infracons</h3>
+                <p className="text-neutral-gray mb-4">
+                  Professional website for infrastructure and construction company, showcasing services, projects, and company information.
+                </p>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  <span className="text-sm font-semibold text-green-700">Live & Active</span>
+                </div>
+                <a
+                  href="https://www.kishoreinfracons.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+                >
+                  Visit Website
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
             <h2 className="text-3xl font-bold text-primary mb-4">Why Choose Prisbo for Website Development?</h2>
             <p className="text-neutral-gray mb-6">
               We don&apos;t just build websites; we build digital experiences that drive business results. 
