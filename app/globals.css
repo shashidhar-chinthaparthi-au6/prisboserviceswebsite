@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,12 +10,85 @@
   }
 
   body {
-    @apply text-neutral-dark-gray bg-white;
+    @apply text-neutral-dark-gray bg-neutral-white antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
   .container-custom {
-    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
+
+  .container-luxury {
+    @apply w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 max-w-[1400px];
+  }
+
+  .btn-luxury {
+    @apply relative px-8 py-4 font-semibold tracking-wider uppercase text-sm transition-all duration-300 overflow-hidden;
+    @apply bg-gradient-to-r from-gold to-accent text-primary-dark;
+    @apply hover:shadow-luxury hover:scale-105;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-accent before:to-gold before:opacity-0 before:transition-opacity before:duration-300;
+    @apply hover:before:opacity-100;
+  }
+
+  .btn-luxury-secondary {
+    @apply relative px-8 py-4 font-semibold tracking-wider uppercase text-sm transition-all duration-300;
+    @apply border-2 border-gold text-gold bg-transparent;
+    @apply hover:bg-gold hover:text-primary-dark hover:shadow-gold;
+  }
+
+  .text-luxury-gradient {
+    @apply bg-gradient-to-r from-gold via-accent to-gold bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .section-luxury {
+    @apply py-12 lg:py-16;
+  }
+
+  .card-luxury {
+    @apply bg-white/95 backdrop-blur-sm border border-neutral-gray/20 rounded-2xl;
+    @apply shadow-luxury hover:shadow-luxury-lg transition-all duration-500;
+    @apply hover:-translate-y-2;
+  }
+
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .divider-luxury {
+    @apply h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent;
+  }
+
+  .navbar-spacer {
+    @apply pt-20 lg:pt-24;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
 }

@@ -9,20 +9,50 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#dc2626', // Red (main color for logo, headings)
-          dark: '#b91c1c',
-          light: '#ef4444',
+          DEFAULT: '#0a0e27', // Deep Navy (luxury primary)
+          dark: '#050811',
+          light: '#1a1f3a',
         },
         secondary: {
-          DEFAULT: '#1e3a8a', // Navy Blue (for buttons, accents)
-          dark: '#1e293b',
-          light: '#3b82f6',
+          DEFAULT: '#1a1f3a', // Charcoal Navy
+          dark: '#0f1119',
+          light: '#2a2f4a',
+        },
+        gold: {
+          DEFAULT: '#d4af37', // Luxury Gold
+          dark: '#b8941f',
+          light: '#e5c158',
+          '50': '#faf8f3',
+          '100': '#f5f0e6',
+        },
+        accent: {
+          DEFAULT: '#c9a961', // Warm Gold Accent
+          dark: '#a68b4f',
+          light: '#d4b877',
         },
         neutral: {
           white: '#ffffff',
-          gray: '#6b7280',
-          'dark-gray': '#1f2937',
+          gray: '#8b8d94',
+          'dark-gray': '#1a1f3a',
+          charcoal: '#0f1119',
         },
+      },
+      fontFamily: {
+        serif: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      letterSpacing: {
+        wider: '0.05em',
+        widest: '0.1em',
+      },
+      boxShadow: {
+        'luxury': '0 20px 60px -15px rgba(0, 0, 0, 0.3)',
+        'luxury-lg': '0 25px 80px -20px rgba(0, 0, 0, 0.4)',
+        'gold': '0 10px 40px -10px rgba(212, 175, 55, 0.3)',
+      },
+      backgroundImage: {
+        'gradient-luxury': 'linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%)',
+        'gradient-gold': 'linear-gradient(135deg, #d4af37 0%, #c9a961 100%)',
       },
     },
   },

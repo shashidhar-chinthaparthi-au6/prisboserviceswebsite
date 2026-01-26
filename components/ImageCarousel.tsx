@@ -63,13 +63,17 @@ export default function ImageCarousel({
             priority={index === 0}
           />
           {(slide.title || slide.subtitle) && (
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 flex items-center justify-center">
-              <div className="text-center text-white px-4">
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/80 flex items-center justify-center">
+              <div className="text-center text-white px-4 max-w-4xl">
                 {slide.title && (
-                  <h2 className="text-4xl md:text-5xl font-bold mb-4">{slide.title}</h2>
+                  <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 tracking-tight animate-fade-in-up">
+                    <span className="text-luxury-gradient">{slide.title}</span>
+                  </h2>
                 )}
                 {slide.subtitle && (
-                  <p className="text-xl md:text-2xl">{slide.subtitle}</p>
+                  <p className="text-xl md:text-2xl lg:text-3xl font-light tracking-wider text-gold/90 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                    {slide.subtitle}
+                  </p>
                 )}
               </div>
             </div>
@@ -82,20 +86,20 @@ export default function ImageCarousel({
         <>
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-lg transition-all z-10"
+            className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 glass-morphism hover:bg-gold/20 text-gold p-3 rounded-full shadow-luxury transition-all z-10 backdrop-blur-md border border-gold/30 hover:scale-110"
             aria-label="Previous slide"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-lg transition-all z-10"
+            className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 glass-morphism hover:bg-gold/20 text-gold p-3 rounded-full shadow-luxury transition-all z-10 backdrop-blur-md border border-gold/30 hover:scale-110"
             aria-label="Next slide"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </>
@@ -103,15 +107,15 @@ export default function ImageCarousel({
 
       {/* Dots Indicator */}
       {slides.length > 1 && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
+              className={`h-1 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? 'bg-white w-8'
-                  : 'bg-white/50 hover:bg-white/75'
+                  ? 'bg-gold w-12 shadow-gold'
+                  : 'bg-white/30 hover:bg-white/50 w-3'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

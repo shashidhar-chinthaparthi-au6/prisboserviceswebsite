@@ -9,20 +9,23 @@ export default function PricingSection() {
   const [currency, setCurrency] = useState<'USD' | 'INR'>('USD');
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-primary mb-4">
-            Affordable Pricing Plans
+    <section className="section-luxury bg-gradient-to-b from-neutral-white to-white">
+      <div className="container-luxury">
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-4 tracking-tight">
+            Premium <span className="text-luxury-gradient">Pricing</span>
           </h2>
-          <p className="text-xl text-neutral-gray">
+          <div className="divider-luxury w-24 mx-auto mb-4"></div>
+          <p className="text-xl text-neutral-gray tracking-wide max-w-2xl mx-auto">
             Choose the perfect plan for your business. All plans include support and maintenance.
           </p>
         </div>
 
-        <CurrencyToggle currency={currency} onCurrencyChange={setCurrency} />
+        <div className="flex justify-center mb-8">
+          <CurrencyToggle currency={currency} onCurrencyChange={setCurrency} />
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-8">
           <PricingCard
             name="Starter"
             price="299"
@@ -85,15 +88,16 @@ export default function PricingSection() {
           />
         </div>
 
-        <div className="text-center">
-          <p className="text-neutral-gray mb-4">
+        <div className="text-center mt-8">
+          <p className="text-neutral-gray mb-4 text-lg tracking-wide">
             All plans include free consultation and flexible payment options.
           </p>
           <Link
             href="/contact"
-            className="text-primary font-semibold hover:underline"
+            className="text-gold font-semibold hover:text-accent transition-colors inline-flex items-center gap-2 tracking-wide group"
           >
-            Need a custom quote? Contact us →
+            Need a custom quote? Contact us
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>
       </div>

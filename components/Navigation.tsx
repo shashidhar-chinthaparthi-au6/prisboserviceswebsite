@@ -2,18 +2,26 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Logo from './Logo';
 
 export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
     { href: '/products', label: 'Products' },
-    { href: '/pricing-breakdown', label: 'Pricing' },
     { href: '/about', label: 'About' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
@@ -28,55 +36,61 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="bg-white shadow-md w-full">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <Logo size="md" />
+    <nav className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
+      scrolled 
+        ? 'glass-morphism shadow-luxury bg-white/95 backdrop-blur-md' 
+        : 'bg-white/80 backdrop-blur-sm'
+    }`}>
+      <div className="container-luxury">
+        <div className="flex justify-between items-center h-20 lg:h-24">
+          <div className="flex items-center relative">
+            <Logo size="lg" />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                className={`relative px-4 py-2 text-sm font-medium tracking-wider transition-all duration-300 ${
                   isActive(link.href)
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-neutral-dark-gray hover:text-primary'
+                    ? 'text-gold'
+                    : 'text-primary hover:text-gold'
                 }`}
               >
                 {link.label}
+                {isActive(link.href) && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent"></span>
+                )}
               </Link>
             ))}
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-neutral-dark-gray hover:text-primary focus:outline-none"
+              className="text-primary hover:text-gold focus:outline-none transition-colors p-2"
               aria-label="Toggle menu"
             >
               <svg
-                className="h-6 w-6"
+                className="h-7 w-7"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                strokeWidth={2}
               >
                 {isOpen ? (
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
                     d="M6 18L18 6M6 6l12 12"
                   />
                 ) : (
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 )}
@@ -87,16 +101,17 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4">
+          <div className="lg:hidden pb-6 animate-fade-in-up">
+            <div className="divider-luxury my-4"></div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 text-base font-medium ${
+                className={`block px-4 py-3 text-base font-medium tracking-wide transition-all duration-300 ${
                   isActive(link.href)
-                    ? 'text-primary bg-primary/10'
-                    : 'text-neutral-dark-gray hover:text-primary hover:bg-gray-50'
+                    ? 'text-gold bg-gold/10 border-l-2 border-gold'
+                    : 'text-primary hover:text-gold hover:bg-gold/5'
                 }`}
               >
                 {link.label}

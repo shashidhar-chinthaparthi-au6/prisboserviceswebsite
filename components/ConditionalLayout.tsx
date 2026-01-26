@@ -15,7 +15,7 @@ export default function ConditionalLayout({
   return (
     <>
       {!isAdminPage && <Navigation />}
-      <main>{children}</main>
+      <main className={!isAdminPage ? 'pt-20 lg:pt-24 relative' : ''}>{children}</main>
       {!isAdminPage && <Footer />}
     </>
   );
