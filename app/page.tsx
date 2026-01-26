@@ -109,7 +109,7 @@ export default function HomePage() {
               Our <span className="text-luxury-gradient">Services</span>
             </h2>
             <div className="divider-luxury w-24 mx-auto mb-4"></div>
-            <p className="text-xl text-neutral-gray tracking-wide max-w-2xl mx-auto">
+            <p className="text-xl text-neutral-gray tracking-wide max-w-4xl mx-auto">
               Exquisite software solutions crafted with precision and elegance
             </p>
           </div>
@@ -206,11 +206,11 @@ export default function HomePage() {
               Our <span className="text-luxury-gradient">Portfolio</span>
             </h2>
             <div className="divider-luxury w-24 mx-auto mb-4"></div>
-            <p className="text-xl text-neutral-gray tracking-wide max-w-2xl mx-auto">
+            <p className="text-xl text-neutral-gray tracking-wide max-w-4xl mx-auto">
               Real websites and applications we&apos;ve built for our clients
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {/* Business Management Suite */}
             <div className="card-luxury overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
@@ -298,13 +298,13 @@ export default function HomePage() {
       {/* CTA Section with Lead Form */}
       <section className="section-luxury bg-gradient-to-b from-white to-neutral-white">
         <div className="container-luxury">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 lg:mb-12">
               <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-4 tracking-tight">
                 Ready to Get <span className="text-luxury-gradient">Started</span>?
               </h2>
               <div className="divider-luxury w-24 mx-auto mb-4"></div>
-              <p className="text-xl lg:text-2xl text-neutral-gray tracking-wide max-w-2xl mx-auto">
+              <p className="text-xl lg:text-2xl text-neutral-gray tracking-wide max-w-3xl mx-auto">
                 Let&apos;s discuss how we can help transform your business.
               </p>
             </div>

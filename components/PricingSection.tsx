@@ -16,7 +16,7 @@ export default function PricingSection() {
             Premium <span className="text-luxury-gradient">Pricing</span>
           </h2>
           <div className="divider-luxury w-24 mx-auto mb-4"></div>
-          <p className="text-xl text-neutral-gray tracking-wide max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-gray tracking-wide max-w-4xl mx-auto">
             Choose the perfect plan for your business. All plans include support and maintenance.
           </p>
         </div>
@@ -25,7 +25,7 @@ export default function PricingSection() {
           <CurrencyToggle currency={currency} onCurrencyChange={setCurrency} />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8">
           <PricingCard
             name="Starter"
             price="299"

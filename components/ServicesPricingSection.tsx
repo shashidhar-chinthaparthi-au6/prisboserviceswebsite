@@ -21,7 +21,7 @@ export default function ServicesPricingSection() {
 
       <CurrencyToggle currency={currency} onCurrencyChange={setCurrency} />
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-8">
         <PricingCard
           name="Basic"
           price="299"
