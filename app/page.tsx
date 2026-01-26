@@ -55,36 +55,36 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="section-luxury bg-gradient-to-b from-white to-neutral-white">
+      <section className="section-luxury section-why-choose">
         <div className="container-luxury">
           <div className="text-center mb-8 lg:mb-12">
-            <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-4 tracking-tight">
-              Why Choose <span className="text-luxury-gradient">Prisbo</span>?
+            <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary dark:text-gold mb-4 tracking-tight">
+              Why Choose <span className="text-luxury-gradient bg-gradient-to-r from-gold via-accent via-gold to-accent bg-clip-text text-transparent">Prisbo</span>?
             </h2>
             <div className="divider-luxury w-24 mx-auto"></div>
           </div>
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-4">
-              <p className="text-xl lg:text-2xl text-neutral-gray leading-relaxed tracking-wide">
+              <p className="text-xl lg:text-2xl text-neutral-gray dark:text-neutral-white/80 leading-relaxed tracking-wide">
                 We combine cutting-edge technology with years of experience to deliver
                 software solutions that drive real business results.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start group">
                   <span className="text-gold mr-4 text-2xl mt-1 group-hover:scale-110 transition-transform">◆</span>
-                  <span className="text-lg text-neutral-dark-gray tracking-wide">Expert team with proven track record</span>
+                  <span className="text-lg text-neutral-dark-gray dark:text-neutral-white tracking-wide">Expert team with proven track record</span>
                 </li>
                 <li className="flex items-start group">
                   <span className="text-gold mr-4 text-2xl mt-1 group-hover:scale-110 transition-transform">◆</span>
-                  <span className="text-lg text-neutral-dark-gray tracking-wide">Modern technologies and best practices</span>
+                  <span className="text-lg text-neutral-dark-gray dark:text-neutral-white tracking-wide">Modern technologies and best practices</span>
                 </li>
                 <li className="flex items-start group">
                   <span className="text-gold mr-4 text-2xl mt-1 group-hover:scale-110 transition-transform">◆</span>
-                  <span className="text-lg text-neutral-dark-gray tracking-wide">Scalable solutions that grow with you</span>
+                  <span className="text-lg text-neutral-dark-gray dark:text-neutral-white tracking-wide">Scalable solutions that grow with you</span>
                 </li>
                 <li className="flex items-start group">
                   <span className="text-gold mr-4 text-2xl mt-1 group-hover:scale-110 transition-transform">◆</span>
-                  <span className="text-lg text-neutral-dark-gray tracking-wide">24/7 support and maintenance</span>
+                  <span className="text-lg text-neutral-dark-gray dark:text-neutral-white tracking-wide">24/7 support and maintenance</span>
                 </li>
               </ul>
             </div>
@@ -102,14 +102,14 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="section-luxury bg-gradient-to-b from-neutral-white to-white">
+      <section className="section-luxury section-services">
         <div className="container-luxury">
           <div className="text-center mb-8 lg:mb-12">
-            <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-4 tracking-tight">
-              Our <span className="text-luxury-gradient">Services</span>
+            <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary dark:text-gold mb-4 tracking-tight">
+              Our <span className="text-luxury-gradient bg-gradient-to-r from-gold via-accent via-gold to-accent bg-clip-text text-transparent">Services</span>
             </h2>
             <div className="divider-luxury w-24 mx-auto mb-4"></div>
-            <p className="text-xl text-neutral-gray tracking-wide max-w-4xl mx-auto">
+            <p className="text-xl text-neutral-gray dark:text-neutral-white/80 tracking-wide max-w-4xl mx-auto">
               Exquisite software solutions crafted with precision and elegance
             </p>
           </div>
@@ -125,10 +125,10 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-8">
-                <h3 className="text-2xl lg:text-3xl font-serif font-bold text-primary mb-4 tracking-tight">
+                <h3 className="text-2xl lg:text-3xl font-serif font-bold text-primary dark:text-gold mb-4 tracking-tight">
                   Website Development
                 </h3>
-                <p className="text-neutral-gray mb-6 leading-relaxed tracking-wide">
+                <p className="text-neutral-gray dark:text-neutral-white/80 mb-6 leading-relaxed tracking-wide">
                   Modern, responsive websites that engage your audience and drive conversions.
                 </p>
                 <Link
@@ -199,14 +199,14 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio Section - Completed Projects */}
-      <section className="section-luxury bg-white">
+      <section className="section-luxury section-portfolio">
         <div className="container-luxury">
           <div className="text-center mb-8 lg:mb-12">
-            <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-4 tracking-tight">
-              Our <span className="text-luxury-gradient">Portfolio</span>
+            <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary dark:text-gold mb-4 tracking-tight">
+              Our <span className="text-luxury-gradient bg-gradient-to-r from-gold via-accent via-gold to-accent bg-clip-text text-transparent">Portfolio</span>
             </h2>
             <div className="divider-luxury w-24 mx-auto mb-4"></div>
-            <p className="text-xl text-neutral-gray tracking-wide max-w-4xl mx-auto">
+            <p className="text-xl text-neutral-gray dark:text-neutral-white/80 tracking-wide max-w-4xl mx-auto">
               Real websites and applications we&apos;ve built for our clients
             </p>
           </div>
@@ -233,7 +233,7 @@ export default function HomePage() {
                   <span className="w-2 h-2 bg-gold rounded-full animate-pulse shadow-gold"></span>
                   <span className="text-sm font-semibold text-gold tracking-wider uppercase">Live & Active</span>
                 </div>
-                <p className="text-neutral-gray mb-6 leading-relaxed tracking-wide">
+                <p className="text-neutral-gray dark:text-neutral-white/80 mb-6 leading-relaxed tracking-wide">
                   Comprehensive business management solution with CRM, project tracking, analytics dashboard, and team collaboration features.
                 </p>
                 <a
@@ -272,7 +272,7 @@ export default function HomePage() {
                   <span className="w-2 h-2 bg-gold rounded-full animate-pulse shadow-gold"></span>
                   <span className="text-sm font-semibold text-gold tracking-wider uppercase">Live & Active</span>
                 </div>
-                <p className="text-neutral-gray mb-6 leading-relaxed tracking-wide">
+                <p className="text-neutral-gray dark:text-neutral-white/80 mb-6 leading-relaxed tracking-wide">
                   Professional website for infrastructure and construction company, showcasing services, projects, and company information.
                 </p>
                 <a
@@ -296,15 +296,15 @@ export default function HomePage() {
       <PricingSection />
 
       {/* CTA Section with Lead Form */}
-      <section className="section-luxury bg-gradient-to-b from-white to-neutral-white">
+      <section className="section-luxury section-cta">
         <div className="container-luxury">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 lg:mb-12">
-              <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-4 tracking-tight">
-                Ready to Get <span className="text-luxury-gradient">Started</span>?
+              <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary dark:text-gold mb-4 tracking-tight">
+                Ready to Get <span className="text-luxury-gradient bg-gradient-to-r from-gold via-accent via-gold to-accent bg-clip-text text-transparent">Started</span>?
               </h2>
               <div className="divider-luxury w-24 mx-auto mb-4"></div>
-              <p className="text-xl lg:text-2xl text-neutral-gray tracking-wide max-w-3xl mx-auto">
+              <p className="text-xl lg:text-2xl text-neutral-gray dark:text-neutral-white/80 tracking-wide max-w-3xl mx-auto">
                 Let&apos;s discuss how we can help transform your business.
               </p>
             </div>

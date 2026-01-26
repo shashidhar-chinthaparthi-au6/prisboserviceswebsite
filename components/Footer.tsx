@@ -13,14 +13,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           <div className="lg:col-span-1">
             <Logo size="lg" className="mb-6" />
-            <p className="text-neutral-gray leading-relaxed text-sm tracking-wide">
+            <p className="text-neutral-gray dark:text-neutral-white/70 leading-relaxed text-sm tracking-wide">
               Crafting exceptional software solutions with precision and elegance for discerning businesses.
             </p>
           </div>
 
           <div>
             <h4 className="font-serif text-lg font-semibold mb-6 text-gold tracking-wider">Services</h4>
-            <ul className="space-y-3 text-neutral-gray">
+            <ul className="space-y-3 text-neutral-gray dark:text-neutral-white/70">
               <li>
                 <Link href="/services/website-development" className="hover:text-gold transition-colors duration-300 text-sm tracking-wide flex items-center group">
                   <span className="w-1 h-1 bg-gold rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -44,7 +44,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-serif text-lg font-semibold mb-6 text-gold tracking-wider">Company</h4>
-            <ul className="space-y-3 text-neutral-gray">
+            <ul className="space-y-3 text-neutral-gray dark:text-neutral-white/70">
               <li>
                 <Link href="/about" className="hover:text-gold transition-colors duration-300 text-sm tracking-wide flex items-center group">
                   <span className="w-1 h-1 bg-gold rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -74,7 +74,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-serif text-lg font-semibold mb-6 text-gold tracking-wider">Contact</h4>
-            <ul className="space-y-4 text-neutral-gray text-sm">
+            <ul className="space-y-4 text-neutral-gray dark:text-neutral-white/70 text-sm">
               <li className="flex items-start">
                 <span className="text-gold mr-3 mt-1">✉</span>
                 <a href="mailto:prisboservices@gmail.com" className="hover:text-gold transition-colors duration-300">
@@ -106,7 +106,7 @@ export default function Footer() {
 
         <div className="divider-luxury mt-12 lg:mt-16"></div>
         <div className="mt-8 text-center">
-          <p className="text-neutral-gray text-sm tracking-wider">
+          <p className="text-neutral-gray dark:text-neutral-white/70 text-sm tracking-wider">
             &copy; {currentYear} <span className="text-gold">Prisbo</span>. All rights reserved.
           </p>
         </div>

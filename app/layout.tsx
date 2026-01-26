@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import ConditionalLayout from '@/components/ConditionalLayout';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Prisbo - Software Services & Products',
@@ -55,7 +56,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans">
-        <ConditionalLayout>{children}</ConditionalLayout>
+        <ThemeProvider>
+          <ConditionalLayout>{children}</ConditionalLayout>
+        </ThemeProvider>
       </body>
     </html>
   );

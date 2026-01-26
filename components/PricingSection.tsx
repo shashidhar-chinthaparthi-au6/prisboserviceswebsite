@@ -9,14 +9,14 @@ export default function PricingSection() {
   const [currency, setCurrency] = useState<'USD' | 'INR'>('USD');
 
   return (
-    <section className="section-luxury bg-gradient-to-b from-neutral-white to-white">
+    <section className="section-luxury section-pricing">
       <div className="container-luxury">
         <div className="text-center mb-8 lg:mb-12">
-          <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-4 tracking-tight">
-            Premium <span className="text-luxury-gradient">Pricing</span>
+          <h2 className="text-5xl lg:text-6xl font-serif font-bold text-primary dark:text-gold mb-4 tracking-tight">
+            Premium <span className="text-luxury-gradient bg-gradient-to-r from-gold via-accent via-gold to-accent bg-clip-text text-transparent">Pricing</span>
           </h2>
           <div className="divider-luxury w-24 mx-auto mb-4"></div>
-          <p className="text-xl text-neutral-gray tracking-wide max-w-4xl mx-auto">
+          <p className="text-xl text-neutral-gray dark:text-neutral-white/80 tracking-wide max-w-4xl mx-auto">
             Choose the perfect plan for your business. All plans include support and maintenance.
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function PricingSection() {
         </div>
 
         <div className="text-center mt-8">
-          <p className="text-neutral-gray mb-4 text-lg tracking-wide">
+          <p className="text-neutral-gray dark:text-neutral-white/80 mb-4 text-lg tracking-wide">
             All plans include free consultation and flexible payment options.
           </p>
           <Link

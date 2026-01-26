@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Logo from './Logo';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -36,10 +37,10 @@ export default function Navigation() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 backdrop-blur-sm ${
       scrolled 
-        ? 'glass-morphism shadow-luxury bg-white/95 backdrop-blur-md' 
-        : 'bg-white/80 backdrop-blur-sm'
+        ? 'glass-morphism shadow-luxury backdrop-blur-md border-b border-gold/20 dark:border-gold/10' 
+        : 'navbar-bg backdrop-blur-sm'
     }`}>
       <div className="container-luxury">
         <div className="flex justify-between items-center h-20 lg:h-24">
@@ -56,7 +57,7 @@ export default function Navigation() {
                 className={`relative px-4 py-2 text-sm font-medium tracking-wider transition-all duration-300 ${
                   isActive(link.href)
                     ? 'text-gold'
-                    : 'text-primary hover:text-gold'
+                    : 'text-primary dark:text-neutral-white hover:text-gold'
                 }`}
               >
                 {link.label}
@@ -65,13 +66,17 @@ export default function Navigation() {
                 )}
               </Link>
             ))}
+            <div className="ml-4 pl-4 border-l border-neutral-gray/20 dark:border-gold/20">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-primary hover:text-gold focus:outline-none transition-colors p-2"
+              className="text-primary dark:text-neutral-white hover:text-gold focus:outline-none transition-colors p-2"
               aria-label="Toggle menu"
             >
               <svg
@@ -110,8 +115,8 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 text-base font-medium tracking-wide transition-all duration-300 ${
                   isActive(link.href)
-                    ? 'text-gold bg-gold/10 border-l-2 border-gold'
-                    : 'text-primary hover:text-gold hover:bg-gold/5'
+                    ? 'text-gold bg-gold/10 dark:bg-gold/20 border-l-2 border-gold'
+                    : 'text-primary dark:text-neutral-white hover:text-gold hover:bg-gold/5 dark:hover:bg-gold/10'
                 }`}
               >
                 {link.label}

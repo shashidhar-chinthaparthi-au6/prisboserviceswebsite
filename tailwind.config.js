@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -29,6 +30,8 @@ module.exports = {
           DEFAULT: '#c9a961', // Warm Gold Accent
           dark: '#a68b4f',
           light: '#d4b877',
+          '50': '#f5f2e8',
+          '100': '#ebe5d1',
         },
         neutral: {
           white: '#ffffff',
