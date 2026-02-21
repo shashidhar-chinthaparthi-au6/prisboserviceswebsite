@@ -38,23 +38,23 @@ export default function FeedbackPage() {
 
           <FeedbackForm />
 
-          <div className="mt-12 bg-gray-50 rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-primary mb-4">Why Your Feedback Matters</h2>
-            <ul className="space-y-3 text-neutral-gray">
+          <div className="mt-12 bg-gray-50 dark:bg-primary-light rounded-lg p-8 border border-transparent dark:border-gold/20">
+            <h2 className="text-2xl font-bold text-primary dark:text-gold mb-4">Why Your Feedback Matters</h2>
+            <ul className="space-y-3 text-neutral-gray dark:text-neutral-white/80">
               <li className="flex items-start">
-                <span className="text-primary mr-3 text-xl flex-shrink-0">✓</span>
+                <span className="text-primary dark:text-gold mr-3 text-xl flex-shrink-0">✓</span>
                 <span>Helps us improve our services and customer experience</span>
               </li>
               <li className="flex items-start">
-                <span className="text-primary mr-3 text-xl flex-shrink-0">✓</span>
+                <span className="text-primary dark:text-gold mr-3 text-xl flex-shrink-0">✓</span>
                 <span>Guides our product development and feature priorities</span>
               </li>
               <li className="flex items-start">
-                <span className="text-primary mr-3 text-xl flex-shrink-0">✓</span>
+                <span className="text-primary dark:text-gold mr-3 text-xl flex-shrink-0">✓</span>
                 <span>Enables us to address issues and concerns promptly</span>
               </li>
               <li className="flex items-start">
-                <span className="text-primary mr-3 text-xl flex-shrink-0">✓</span>
+                <span className="text-primary dark:text-gold mr-3 text-xl flex-shrink-0">✓</span>
                 <span>Shapes the future direction of our company</span>
               </li>
             </ul>

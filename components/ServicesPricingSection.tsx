@@ -11,10 +11,10 @@ export default function ServicesPricingSection() {
   return (
     <div className="mb-16">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-primary mb-4">
+        <h2 className="text-4xl font-bold text-primary dark:text-gold mb-4">
           Transparent Pricing
         </h2>
-        <p className="text-xl text-neutral-gray">
+        <p className="text-xl text-neutral-gray dark:text-neutral-white/80">
           Affordable plans starting from just {currency === 'USD' ? '$299' : '₹24,900'}. All plans include support.
         </p>
       </div>

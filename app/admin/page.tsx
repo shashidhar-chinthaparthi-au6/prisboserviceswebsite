@@ -111,25 +111,27 @@ export default function AdminDashboard() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-primary text-xl">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-primary">
+        <div className="text-primary dark:text-gold text-xl">Loading...</div>
       </div>
     );
   }
 
+  const inputClass = 'w-full px-4 py-2 border border-gray-300 dark:border-gold/30 rounded-lg focus:ring-2 focus:ring-primary focus:ring-gold/50 focus:border-transparent bg-white dark:bg-primary-dark dark:text-neutral-white placeholder:text-neutral-gray dark:placeholder:text-neutral-white/50';
+
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
-          <h1 className="text-3xl font-bold text-primary mb-6">Admin Login</h1>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-primary">
+        <div className="bg-white dark:bg-primary-light rounded-lg shadow-lg p-8 max-w-md w-full border border-transparent dark:border-gold/20">
+          <h1 className="text-3xl font-bold text-primary dark:text-gold mb-6">Admin Login</h1>
           <form onSubmit={handleLogin} className="space-y-4">
             {loginError && (
-              <div className="bg-red-50 text-red-800 p-3 rounded border border-red-200">
+              <div className="bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-200 p-3 rounded border border-red-200 dark:border-red-700">
                 {loginError}
               </div>
             )}
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-neutral-dark-gray mb-1">
+              <label htmlFor="username" className="block text-sm font-medium text-neutral-dark-gray dark:text-neutral-white mb-1">
                 Username
               </label>
               <input
@@ -138,11 +140,11 @@ export default function AdminDashboard() {
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className={inputClass}
               />
             </div>
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-neutral-dark-gray mb-1">
+              <label htmlFor="password" className="block text-sm font-medium text-neutral-dark-gray dark:text-neutral-white mb-1">
                 Password
               </label>
               <input
@@ -151,7 +153,7 @@ export default function AdminDashboard() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className={inputClass}
               />
             </div>
             <button
@@ -167,11 +169,11 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-primary py-8">
       <div className="container-custom">
-        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
+        <div className="bg-white dark:bg-primary-light rounded-lg shadow-lg p-6 md:p-8 border border-transparent dark:border-gold/20">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl font-bold text-primary">Interested Users Dashboard</h1>
+            <h1 className="text-3xl font-bold text-primary dark:text-gold">Interested Users Dashboard</h1>
             <div className="flex gap-4">
               <a
                 href="/admin/pricing"
@@ -196,7 +198,7 @@ export default function AdminDashboard() {
                 placeholder="Search by name or email..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gold/30 rounded-lg focus:ring-2 focus:ring-gold/50 focus:border-transparent bg-white dark:bg-primary-dark dark:text-neutral-white placeholder:text-neutral-gray dark:placeholder:text-neutral-white/50"
               />
               <button
                 type="submit"
@@ -211,7 +213,7 @@ export default function AdminDashboard() {
                 setFilter(e.target.value);
                 setPagination({ ...pagination, page: 1 });
               }}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="px-4 py-2 border border-gray-300 dark:border-gold/30 rounded-lg focus:ring-2 focus:ring-gold/50 focus:border-transparent bg-white dark:bg-primary-dark dark:text-neutral-white"
             >
               <option value="">All Types</option>
               <option value="service">Services</option>
@@ -221,61 +223,61 @@ export default function AdminDashboard() {
 
           {/* Leads Table */}
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full divide-y divide-gray-200 dark:divide-gold/20">
+              <thead className="bg-gray-50 dark:bg-primary-dark">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray dark:text-neutral-white uppercase tracking-wider">
                     Name
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray dark:text-neutral-white uppercase tracking-wider">
                     Email
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray dark:text-neutral-white uppercase tracking-wider">
                     Phone
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray dark:text-neutral-white uppercase tracking-wider">
                     Interest
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray dark:text-neutral-white uppercase tracking-wider">
                     Message
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-neutral-dark-gray dark:text-neutral-white uppercase tracking-wider">
                     Date
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-white dark:bg-primary-light divide-y divide-gray-200 dark:divide-gold/20">
                 {leads.length === 0 ? (
                   <tr>
-                    <td colSpan={6} className="px-6 py-4 text-center text-neutral-gray">
+                    <td colSpan={6} className="px-6 py-4 text-center text-neutral-gray dark:text-neutral-white/70">
                       No leads found.
                     </td>
                   </tr>
                 ) : (
                   leads.map((lead) => (
-                    <tr key={lead._id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-dark-gray">
+                    <tr key={lead._id} className="hover:bg-gray-50 dark:hover:bg-primary-dark/50">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-dark-gray dark:text-neutral-white">
                         {lead.name}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-gray">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-gray dark:text-neutral-white/80">
                         {lead.email}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-gray">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-gray dark:text-neutral-white/80">
                         {lead.phone || '-'}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-gray">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-gray dark:text-neutral-white/80">
                         <span className={`px-2 py-1 rounded text-xs font-semibold ${
                           lead.interestType === 'service'
-                            ? 'bg-primary/10 text-primary'
-                            : 'bg-secondary/10 text-secondary'
+                            ? 'bg-primary/10 dark:bg-gold/20 text-primary dark:text-gold'
+                            : 'bg-secondary/10 dark:bg-gold/10 text-secondary dark:text-gold'
                         }`}>
                           {lead.interestName}
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-sm text-neutral-gray max-w-xs truncate">
+                      <td className="px-6 py-4 text-sm text-neutral-gray dark:text-neutral-white/80 max-w-xs truncate">
                         {lead.message}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-gray">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-gray dark:text-neutral-white/80">
                         {new Date(lead.createdAt).toLocaleDateString()}
                       </td>
                     </tr>
@@ -288,7 +290,7 @@ export default function AdminDashboard() {
           {/* Pagination */}
           {pagination.totalPages > 1 && (
             <div className="mt-6 flex items-center justify-between">
-              <div className="text-sm text-neutral-gray">
+              <div className="text-sm text-neutral-gray dark:text-neutral-white/70">
                 Showing {((pagination.page - 1) * pagination.limit) + 1} to{' '}
                 {Math.min(pagination.page * pagination.limit, pagination.total)} of{' '}
                 {pagination.total} results
@@ -297,17 +299,17 @@ export default function AdminDashboard() {
                 <button
                   onClick={() => setPagination({ ...pagination, page: pagination.page - 1 })}
                   disabled={pagination.page === 1}
-                  className="px-4 py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                  className="px-4 py-2 border border-gray-300 dark:border-gold/30 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 dark:hover:bg-primary-dark bg-white dark:bg-primary-dark dark:text-neutral-white"
                 >
                   Previous
                 </button>
-                <span className="px-4 py-2 text-sm text-neutral-gray">
+                <span className="px-4 py-2 text-sm text-neutral-gray dark:text-neutral-white/70">
                   Page {pagination.page} of {pagination.totalPages}
                 </span>
                 <button
                   onClick={() => setPagination({ ...pagination, page: pagination.page + 1 })}
                   disabled={pagination.page >= pagination.totalPages}
-                  className="px-4 py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                  className="px-4 py-2 border border-gray-300 dark:border-gold/30 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 dark:hover:bg-primary-dark bg-white dark:bg-primary-dark dark:text-neutral-white"
                 >
                   Next
                 </button>

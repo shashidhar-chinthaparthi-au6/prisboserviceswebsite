@@ -83,13 +83,13 @@ export default function Footer() {
               </li>
               <li className="flex items-start">
                 <span className="text-gold mr-3 mt-1">📞</span>
-                <a href="tel:+918792790406" className="hover:text-gold transition-colors duration-300">
-                  +91 8792790406
+                <a href="tel:+917893898201" className="hover:text-gold transition-colors duration-300">
+                  +91 7893898201
                 </a>
               </li>
               <li>
                 <a 
-                  href="https://wa.me/918792790406" 
+                  href="https://wa.me/917893898201" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:text-gold transition-colors duration-300 flex items-center gap-2 group"

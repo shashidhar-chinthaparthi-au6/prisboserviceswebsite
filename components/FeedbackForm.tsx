@@ -64,19 +64,22 @@ export default function FeedbackForm({
     }
   };
 
+  const inputClass =
+    'w-full px-4 py-2 border border-gray-300 dark:border-gold/30 rounded-lg focus:ring-2 focus:ring-primary focus:ring-gold/50 focus:border-transparent bg-white dark:bg-primary-dark dark:text-neutral-white placeholder:text-neutral-gray dark:placeholder:text-neutral-white/50';
+
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8">
+    <div className="bg-white dark:bg-primary-light rounded-lg shadow-lg p-8 border border-transparent dark:border-gold/20">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-primary mb-2">{title}</h2>
-        <p className="text-neutral-gray">{subtitle}</p>
+        <h2 className="text-3xl font-bold text-primary dark:text-gold mb-2">{title}</h2>
+        <p className="text-neutral-gray dark:text-neutral-white/80">{subtitle}</p>
       </div>
 
       {submitStatus && (
         <div
           className={`mb-6 p-4 rounded-lg ${
             submitStatus.type === 'success'
-              ? 'bg-green-50 text-green-800 border border-green-200'
-              : 'bg-red-50 text-red-800 border border-red-200'
+              ? 'bg-green-50 dark:bg-green-900/30 text-green-800 dark:text-green-200 border border-green-200 dark:border-green-700'
+              : 'bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-700'
           }`}
         >
           {submitStatus.message}
@@ -85,7 +88,7 @@ export default function FeedbackForm({
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-neutral-dark-gray mb-1">
+          <label htmlFor="name" className="block text-sm font-medium text-neutral-dark-gray dark:text-neutral-white mb-1">
             Name <span className="text-secondary">*</span>
           </label>
           <input
@@ -94,13 +97,13 @@ export default function FeedbackForm({
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+            className={inputClass}
             placeholder="Your name"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-neutral-dark-gray mb-1">
+          <label htmlFor="email" className="block text-sm font-medium text-neutral-dark-gray dark:text-neutral-white mb-1">
             Email <span className="text-secondary">*</span>
           </label>
           <input
@@ -109,13 +112,13 @@ export default function FeedbackForm({
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+            className={inputClass}
             placeholder="your.email@example.com"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-neutral-dark-gray mb-2">
+          <label className="block text-sm font-medium text-neutral-dark-gray dark:text-neutral-white mb-2">
             Rating <span className="text-secondary">*</span>
           </label>
           <div className="flex gap-2">
@@ -127,7 +130,7 @@ export default function FeedbackForm({
                 className={`text-4xl transition-all ${
                   formData.rating >= star
                     ? 'text-yellow-400'
-                    : 'text-gray-300 hover:text-yellow-300'
+                    : 'text-gray-300 dark:text-gold/40 hover:text-yellow-400 dark:hover:text-gold'
                 }`}
                 aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}
               >
@@ -136,7 +139,7 @@ export default function FeedbackForm({
             ))}
           </div>
           {formData.rating > 0 && (
-            <p className="text-sm text-neutral-gray mt-1">
+            <p className="text-sm text-neutral-gray dark:text-neutral-white/70 mt-1">
               {formData.rating === 5 && 'Excellent!'}
               {formData.rating === 4 && 'Great!'}
               {formData.rating === 3 && 'Good'}
@@ -147,7 +150,7 @@ export default function FeedbackForm({
         </div>
 
         <div>
-          <label htmlFor="category" className="block text-sm font-medium text-neutral-dark-gray mb-1">
+          <label htmlFor="category" className="block text-sm font-medium text-neutral-dark-gray dark:text-neutral-white mb-1">
             Category
           </label>
           <select
@@ -159,20 +162,20 @@ export default function FeedbackForm({
                 category: e.target.value as typeof formData.category,
               })
             }
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+            className={inputClass}
           >
-            <option value="general">General Feedback</option>
-            <option value="service">Service Feedback</option>
-            <option value="website">Website Feedback</option>
-            <option value="suggestion">Suggestion</option>
-            <option value="complaint">Complaint</option>
+            <option value="general" className="bg-white dark:bg-primary-dark text-primary dark:text-neutral-white">General Feedback</option>
+            <option value="service" className="bg-white dark:bg-primary-dark text-primary dark:text-neutral-white">Service Feedback</option>
+            <option value="website" className="bg-white dark:bg-primary-dark text-primary dark:text-neutral-white">Website Feedback</option>
+            <option value="suggestion" className="bg-white dark:bg-primary-dark text-primary dark:text-neutral-white">Suggestion</option>
+            <option value="complaint" className="bg-white dark:bg-primary-dark text-primary dark:text-neutral-white">Complaint</option>
           </select>
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-neutral-dark-gray mb-1">
+          <label htmlFor="message" className="block text-sm font-medium text-neutral-dark-gray dark:text-neutral-white mb-1">
             Message <span className="text-secondary">*</span>
-            <span className="text-xs text-neutral-gray ml-2">(minimum 10 characters)</span>
+            <span className="text-xs text-neutral-gray dark:text-neutral-white/70 ml-2">(minimum 10 characters)</span>
           </label>
           <textarea
             id="message"
@@ -181,7 +184,7 @@ export default function FeedbackForm({
             rows={5}
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+            className={inputClass}
             placeholder="Tell us what you think..."
           />
         </div>
