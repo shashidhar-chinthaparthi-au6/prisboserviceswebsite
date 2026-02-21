@@ -22,6 +22,7 @@ export default function Navigation() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
+    { href: '/services/quick-websites', label: 'Quick Websites' },
     { href: '/products', label: 'Products' },
     { href: '/about', label: 'About' },
     { href: '/blog', label: 'Blog' },

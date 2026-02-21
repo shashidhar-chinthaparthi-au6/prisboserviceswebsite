@@ -27,6 +27,12 @@ export default function ServicesPage() {
       href: '/services/custom-software-solutions',
       features: ['Custom Development', 'Enterprise Solutions', 'API Integration', 'Scalable Architecture'],
     },
+    {
+      title: 'Quick & Affordable Websites',
+      description: 'Subdomain sites, digital visiting cards, portfolios, WhatsApp catalogues, and monthly plans. Perfect for local shops and freelancers.',
+      href: '/services/quick-websites',
+      features: ['From ₹199', 'Digital Cards', 'Portfolios', 'Monthly Plans'],
+    },
   ];
 
   return (
@@ -39,7 +45,7 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {services.map((service) => (
             <div
               key={service.href}

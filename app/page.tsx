@@ -210,7 +210,7 @@ export default function HomePage() {
               Real websites and applications we&apos;ve built for our clients
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Business Management Suite */}
             <div className="card-luxury overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
@@ -277,6 +277,45 @@ export default function HomePage() {
                 </p>
                 <a
                   href="https://www.kishoreinfracons.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-luxury-secondary inline-flex items-center gap-2"
+                >
+                  <span>Visit Website</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Matrimony Platform */}
+            <div className="card-luxury overflow-hidden group">
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80"
+                  alt="Matrimony Platform"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <h3 className="text-3xl font-serif font-bold text-white mb-3 drop-shadow-lg">Matrimony Platform</h3>
+                    <p className="text-gold/90 text-base tracking-wide drop-shadow">Online Matrimony & Matchmaking Service</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-2 h-2 bg-gold rounded-full animate-pulse shadow-gold"></span>
+                  <span className="text-sm font-semibold text-gold tracking-wider uppercase">Live & Active</span>
+                </div>
+                <p className="text-neutral-gray dark:text-neutral-white/80 mb-6 leading-relaxed tracking-wide">
+                  Comprehensive matrimony platform with profile management, advanced search, matchmaking algorithms, and secure communication features.
+                </p>
+                <a
+                  href="https://matrimony.prisboservices.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-luxury-secondary inline-flex items-center gap-2"

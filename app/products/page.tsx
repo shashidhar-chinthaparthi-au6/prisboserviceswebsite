@@ -20,6 +20,15 @@ export default function ProductsPage() {
       liveUrl: 'https://bms.prisboservices.com/',
     },
     {
+      id: 'product-4',
+      name: 'Matrimony Platform',
+      description: 'Comprehensive online matrimony and matchmaking platform with advanced search, profile management, and secure communication features.',
+      features: ['Profile Management', 'Advanced Search', 'Matchmaking Algorithm', 'Secure Messaging'],
+      image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80',
+      isLive: true,
+      liveUrl: 'https://matrimony.prisboservices.com',
+    },
+    {
       id: 'product-2',
       name: 'E-Commerce Platform',
       description: 'Full-featured e-commerce platform with inventory management, payment processing, and order tracking.',
@@ -35,12 +44,17 @@ export default function ProductsPage() {
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
       isLive: false,
     },
-  ];
+  ].sort((a, b) => {
+    // Sort by live status: live products first (true comes before false)
+    if (a.isLive && !b.isLive) return -1;
+    if (!a.isLive && b.isLive) return 1;
+    return 0;
+  });
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="section-luxury bg-gradient-to-b from-white to-neutral-white -mt-20 lg:-mt-24 pt-20 lg:pt-24">
+      <section className="section-luxury section-why-choose -mt-20 lg:-mt-24 pt-20 lg:pt-24">
         <div className="container-luxury">
           <div className="relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-luxury-lg">
             <Image
@@ -81,11 +95,11 @@ export default function ProductsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-8">
-                <h2 className="text-2xl lg:text-3xl font-serif font-bold text-primary mb-4 tracking-tight">{product.name}</h2>
-                <p className="text-neutral-gray mb-6 leading-relaxed tracking-wide">{product.description}</p>
+                <h2 className="text-2xl lg:text-3xl font-serif font-bold text-primary dark:text-gold mb-4 tracking-tight">{product.name}</h2>
+                <p className="text-neutral-gray dark:text-neutral-white/80 mb-6 leading-relaxed tracking-wide">{product.description}</p>
                 <ul className="space-y-3 mb-6">
                   {product.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start text-neutral-gray group/feature">
+                    <li key={idx} className="flex items-start text-neutral-gray dark:text-neutral-white/80 group/feature">
                       <span className="text-gold mr-3 mt-1 text-lg group-hover/feature:scale-110 transition-transform">◆</span>
                       <span className="tracking-wide">{feature}</span>
                     </li>

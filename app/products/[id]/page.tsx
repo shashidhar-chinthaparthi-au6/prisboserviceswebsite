@@ -47,6 +47,22 @@ const products: Record<string, { name: string; description: string; details: str
       'API for custom integrations',
     ],
   },
+  'product-4': {
+    name: 'Matrimony Platform',
+    description: 'Comprehensive online matrimony and matchmaking platform with advanced search, profile management, and secure communication features.',
+    details: [
+      'Profile Management - Create and manage detailed profiles with photos, preferences, and family information',
+      'Advanced Search - Powerful search filters based on age, education, location, profession, and more',
+      'Matchmaking Algorithm - Intelligent matching system that suggests compatible profiles',
+      'Secure Messaging - Private and secure communication between interested parties',
+      'Photo Gallery - Multiple photo uploads with privacy controls',
+      'Horoscope Matching - Traditional horoscope compatibility checking',
+      'Mobile Responsive - Fully optimized for mobile devices',
+      'Privacy Controls - Advanced privacy settings to control profile visibility',
+    ],
+    isLive: true,
+    liveUrl: 'https://matrimony.prisboservices.com',
+  },
 };
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
@@ -69,15 +85,15 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
   return (
     <div>
-      <section className="section-luxury bg-gradient-to-b from-white to-neutral-white -mt-20 lg:-mt-24 pt-20 lg:pt-24">
+      <section className="section-luxury section-cta -mt-20 lg:-mt-24 pt-20 lg:pt-24">
         <div className="container-luxury">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12 lg:mb-16">
-              <h1 className="text-5xl lg:text-7xl font-serif font-bold text-primary mb-6 tracking-tight">
-                <span className="text-luxury-gradient">{product.name}</span>
+              <h1 className="text-5xl lg:text-7xl font-serif font-bold text-primary dark:text-gold mb-6 tracking-tight">
+                <span className="text-luxury-gradient bg-gradient-to-r from-gold via-accent via-gold to-accent bg-clip-text text-transparent">{product.name}</span>
               </h1>
               <div className="divider-luxury w-24 mx-auto mb-6"></div>
-              <p className="text-xl lg:text-2xl text-neutral-gray tracking-wide max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl lg:text-2xl text-neutral-gray dark:text-neutral-white/80 tracking-wide max-w-3xl mx-auto leading-relaxed">
                 {product.description}
               </p>
             </div>
@@ -90,7 +106,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                       <span className="w-3 h-3 bg-gold rounded-full animate-pulse shadow-gold"></span>
                       <span className="text-xl font-serif font-semibold text-gold tracking-wider">Live & Available Now</span>
                     </div>
-                    <p className="text-neutral-gray tracking-wide">This product is fully functional and ready to use.</p>
+                    <p className="text-neutral-gray dark:text-neutral-white/80 tracking-wide">This product is fully functional and ready to use.</p>
                   </div>
                   <a
                     href={product.liveUrl}
@@ -108,15 +124,15 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             )}
 
             <div className="mb-12 lg:mb-16">
-              <h2 className="text-4xl lg:text-5xl font-serif font-bold text-primary mb-8 tracking-tight">
-                Key <span className="text-luxury-gradient">Features</span>
+              <h2 className="text-4xl lg:text-5xl font-serif font-bold text-primary dark:text-gold mb-8 tracking-tight">
+                Key <span className="text-luxury-gradient bg-gradient-to-r from-gold via-accent via-gold to-accent bg-clip-text text-transparent">Features</span>
               </h2>
               <div className="divider-luxury w-16 mb-8"></div>
               <ul className="space-y-4">
                 {product.details.map((detail, idx) => (
                   <li key={idx} className="flex items-start group">
                     <span className="text-gold mr-4 mt-1 text-xl group-hover:scale-110 transition-transform">◆</span>
-                    <span className="text-lg text-neutral-dark-gray leading-relaxed tracking-wide">{detail}</span>
+                    <span className="text-lg text-neutral-dark-gray dark:text-neutral-white leading-relaxed tracking-wide">{detail}</span>
                   </li>
                 ))}
               </ul>

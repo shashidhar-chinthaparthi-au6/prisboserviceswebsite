@@ -25,8 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=document.documentElement.classList;try{var s=localStorage.getItem('theme');if(s==='light')t.remove('dark');else t.add('dark');}catch(e){t.add('dark');}})();`,
+          }}
+        />
         <link rel="icon" href="/logonew.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logonew.png" />
         {/* Google tag (gtag.js) */}
